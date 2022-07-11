@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class BodyGenerator {
-    //TODO: add try catch
     //read data from Json file, convert it to String to use in requests
     public static String generateBodyFromFileToString(String fileName) {
         String generatedBody = "";
