@@ -10,8 +10,6 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 public class CreateRepositoryTests {
     private static final String USER_NAME = "MarinaShvachko";
     String endPoint = Url.getBaseUrI("/user/repos");
@@ -19,7 +17,7 @@ public class CreateRepositoryTests {
     Response response;
 
     @Test
-    public void createRepoWithBodyAsString() throws IOException {
+    public void createRepoWithBodyAsString() {
         String requestBody = BodyGenerator.generateBodyFromFileToString("createRepo.json");
         response = BaseClass.postRequest(endPoint, requestBody, token);
         String responseAsString = response.getBody().asString();
@@ -38,7 +36,7 @@ public class CreateRepositoryTests {
     }
 
     @Test
-    public void createRepoWithBodyAsObject() throws IOException {
+    public void createRepoWithBodyAsObject() {
         CreateRepoPojo requestBody = new CreateRepoPojo();
         requestBody.setName("API-repository-test-2");
         requestBody.setDescription("This repository was created by API-2");
