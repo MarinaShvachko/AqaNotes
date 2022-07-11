@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameters">
+
+    <parameter name="typeOfCola" value="without sugar"></parameter>
+    <parameter name="typeOfTea" value="Black"></parameter>
+    <parameter name="amountOfSugar" value="2 spoons"></parameter>
+
+    <test name="Pass parameters from testng.xml to methods">
+        <classes>
+            <class name="testng.dataDrivenTesting.passParametersViaTestngXmlFile.DrinksWithParameters"></class>
+        </classes>
+    </test>
+
+
+
+</suite>

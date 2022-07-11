@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Listeners example">
+
+    <listeners>
+        <listener class-name="testng.listenersExample.Listeners"/>
+    </listeners>
+    
+    <test name="Listeners test">
+        <classes>
+            <class name="testng.listenersExample.Drinks"/>
+        </classes>
+    </test>
+
+</suite>

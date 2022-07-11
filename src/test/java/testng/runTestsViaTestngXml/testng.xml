@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Drinks">
+
+    <test name="Run only one method cola in a class Drinks">
+        <classes>
+            <class name="testng.runTestsViaTestngXml.Drinks">
+            <methods>
+                <include name="cola"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Exclude method cola in a class Drinks">
+        <classes>
+            <class name="testng.runTestsViaTestngXml.Drinks">
+                <methods>
+                    <exclude name="cola"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Run all test in a class Drinks">
+        <classes>
+            <class name="testng.runTestsViaTestngXml.Drinks"/>
+        </classes>
+    </test>
+
+   <test name="Run all test in classes Drinks and Salads">
+        <classes>
+            <class name="testng.runTestsViaTestngXml.Drinks"/>
+            <class name="testng.runTestsViaTestngXml.Salads"/>
+        </classes>
+    </test>
+
+    <test name="Run all test in a package">
+        <packages>
+            <package name="food"/>
+        </packages>
+    </test>
+
+    <test name="Rua a group of tests">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <exclude name="Regress"/> <!-- CAREFULLY! If a test is in excluded group it won't be run even if at the same time it is included groups. -->
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.runTestsViaTestngXml.Drinks"/>
+            <class name="testng.runTestsViaTestngXml.Salads"/>
+        </classes>
+    </test>
+
+</suite>
