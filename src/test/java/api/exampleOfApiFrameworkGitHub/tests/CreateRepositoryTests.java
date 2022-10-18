@@ -19,14 +19,16 @@ public class CreateRepositoryTests {
     @Test
     public void createRepoWithBodyAsString() {
         String requestBody = BodyGenerator.generateBodyFromFileToString("createRepo.json");
+
         response = BaseClass.postRequest(endPoint, requestBody, token);
         String responseAsString = response.getBody().asString();
 
+        //get the name of created repository with a help of written method
         String actualRepoName = CommonUtilityFunctions.getResponseKeyValue(responseAsString, "name");
         String expectedRepoName = CommonUtilityFunctions.getResponseKeyValue(requestBody, "name");
-        String actualRepoDescription = CommonUtilityFunctions.getResponseKeyValue(responseAsString, "description");
+       //get the description of created repository with the help of inbuilt method path()
+        String actualRepoDescription = response.path("description");
         String expectedRepoDescription = CommonUtilityFunctions.getResponseKeyValue(requestBody, "description");
-
         Assert.assertEquals(actualRepoName, expectedRepoName, "The name of the repository in not right");
         Assert.assertEquals(actualRepoDescription, expectedRepoDescription, "The description of the repository in not right");
 
